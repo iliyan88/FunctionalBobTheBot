@@ -1,0 +1,5 @@
+D:\BobTheBot\BobTheBot
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=BobTheBot
+--content-root=D:\BobTheBot\BobTheBot
+--file=
