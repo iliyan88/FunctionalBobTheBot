@@ -2,10 +2,10 @@
 using BobTheBot.Entities;
 using BobTheBot.RequestAndResponse;
 using Microsoft.AspNetCore.Mvc;
-using RJ.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BobTheBot.Controllers
@@ -28,7 +28,7 @@ namespace BobTheBot.Controllers
         }
 
         [HttpPut("{entityId:required}")]
-        public async Task<Result> UpdateSchoolPageLanguageAsync(
+        public async Task<HttpResponseMessage> UpdateSchoolPageLanguageAsync(
             [FromRoute]int entityId,
             [FromBody]UserUpdateRequest request)
         {
@@ -37,7 +37,7 @@ namespace BobTheBot.Controllers
         }
 
         [HttpDelete("{entityId:required}")]
-        public async Task<Result> DeleteSchoolPageAsync(
+        public async Task<HttpResponseMessage> DeleteSchoolPageAsync(
             [FromRoute]int entityId)
         {
             var result = await userService.DeleteAsync(entityId);

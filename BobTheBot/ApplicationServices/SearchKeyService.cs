@@ -1,10 +1,11 @@
 ﻿using BobTheBot.Entities;
 using BobTheBot.Kernel;
 using BobTheBot.RequestAndResponse;
-using RJ.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BobTheBot.ApplicationServices
@@ -19,7 +20,7 @@ namespace BobTheBot.ApplicationServices
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task<Result> Add(WordsRequest request)
+        public async Task<HttpResponseMessage> Add(WordsRequest request)
         {
             var existingWordsEntity = await unitOfWork.SearchKeyRepository.GetAllWords();
             var existingWords = existingWordsEntity.Select(x => x.Word);
@@ -29,11 +30,11 @@ namespace BobTheBot.ApplicationServices
                 if (!existingWords.Contains(item))
                 {
                     var word = new SearchKey(item);
-                    unitOfWork.SearchKeyRepository.Insert(word);
+                    await unitOfWork.SearchKeyRepository.InsertAsync(word);
                 }
             }
             await unitOfWork.SaveChangesAsync();
-            return Result.Ok();
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         public async Task<IEnumerable<WordsResponse>> GetAsync()
@@ -42,17 +43,16 @@ namespace BobTheBot.ApplicationServices
             return existingWords.Select(x => WordsResponse.Create(x));
         }
 
-        public async Task<Result> DeleteAsync(string wordId)
+        public async Task<HttpResponseMessage> DeleteAsync(int wordId)
         {
-            var word = await unitOfWork.SearchKeyRepository.GetByIDAsync(wordId);
+            var word = await unitOfWork.SearchKeyRepository.GetWordById(wordId);
             if (word == null)
             {
-                return Result.Fail(ErrorType.NotFound, nameof(SearchKey), wordId);
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
             unitOfWork.SearchKeyRepository.Delete(word);
             await unitOfWork.SaveChangesAsync();
-            //await categoryCache.InvalidateAsync();
-            return Result.Ok();
+            return new HttpResponseMessage(HttpStatusCode.OK);
 
         }
     }

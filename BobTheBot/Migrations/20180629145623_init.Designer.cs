@@ -10,8 +10,8 @@ using System;
 namespace BobTheBot.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180628115236_Init")]
-    partial class Init
+    [Migration("20180629145623_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,10 +49,10 @@ namespace BobTheBot.Migrations
 
                     b.Property<bool>("SendEmail");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("SkypeUserId")
                         .HasMaxLength(128);
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("SkypeUserName")
                         .HasMaxLength(128);
 
                     b.HasKey("Id");

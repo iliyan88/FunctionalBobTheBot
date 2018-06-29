@@ -1,8 +1,8 @@
 ﻿using BobTheBot.ApplicationServices;
 using BobTheBot.RequestAndResponse;
 using Microsoft.AspNetCore.Mvc;
-using RJ.Core;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BobTheBot.Controllers
@@ -18,7 +18,7 @@ namespace BobTheBot.Controllers
         }
 
         [HttpPost("[controller]")]
-        public async Task<Result> InsertWordAsync([FromBody]WordsRequest request)
+        public async Task<HttpResponseMessage> InsertWordAsync([FromBody]WordsRequest request)
         {
             var result = await searchKeyService.Add(request);
             return result;
@@ -33,7 +33,7 @@ namespace BobTheBot.Controllers
         }
 
         [HttpDelete("[controller]/{entityId:required}")]
-        public async Task<Result> DeleteWordAsync(string entityId)
+        public async Task<HttpResponseMessage> DeleteWordAsync(int entityId)
         {
             var result = await searchKeyService.DeleteAsync(entityId);
             return result;

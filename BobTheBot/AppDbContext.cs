@@ -66,14 +66,17 @@ namespace BobTheBot
             {
                 entity.HasKey(p => p.Id);
 
+                entity.Property(p => p.Id)
+                  .ValueGeneratedOnAdd();
+
                 entity.Property(p => p.ConversationId)
                     .HasMaxLength(128)
                     .IsRequired();
 
-                entity.Property(p => p.UserName)
+                entity.Property(p => p.SkypeUserName)
                     .HasMaxLength(128);
 
-                entity.Property(p => p.UserId)
+                entity.Property(p => p.SkypeUserId)
                     .HasMaxLength(128);
 
                 entity.Property(p => p.Email)

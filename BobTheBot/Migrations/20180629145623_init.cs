@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BobTheBot.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,8 +45,8 @@ namespace BobTheBot.Migrations
                     Email = table.Column<string>(maxLength: 128, nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     SendEmail = table.Column<bool>(nullable: false),
-                    UserId = table.Column<string>(maxLength: 128, nullable: true),
-                    UserName = table.Column<string>(maxLength: 128, nullable: true)
+                    SkypeUserId = table.Column<string>(maxLength: 128, nullable: true),
+                    SkypeUserName = table.Column<string>(maxLength: 128, nullable: true)
                 },
                 constraints: table =>
                 {

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace BobTheBot
 {
-    public interface IUnitOfWork : RJ.Repository.Abstractions.IUnitOfWork
+    public interface IUnitOfWork
     {
+        Task SaveChangesAsync();
+        void SaveChange();
         ISearchKeyRepository SearchKeyRepository { get; }
         IUserToReplyRepository UserToReplyRepository { get; }
     }
