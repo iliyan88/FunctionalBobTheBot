@@ -3,14 +3,14 @@
     "description": "",
     "secretKey": "",
     "services": [
-        {
-            "id": "4b7ccde1-9562-461d-9465-49e03f116243",
-            "name": "http://localhost:1738/api/Messages",
-            "type": "endpoint",
-            "appId": "",
-            "appPassword": "",
-            "endpoint": "http://localhost:1738/api/Messages"
-        },
+      {
+        "id": "4b7ccde1-9562-461d-9465-49e03f116243",
+        "name": "http://localhost:1738/api/Messages",
+        "type": "endpoint",
+        "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
+        "appPassword": "yivkNBQZA039xhaGU53#|*|",
+        "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=TNDFns4jt2fCEiDS46xhgt3LgUc7kKMMqLBDw7fahFKmd3RuzzHFNg=="
+      },
         {
             "appId": "",
             "id": "1fcf0620-7bad-11e8-b7ed-f79c3f4b062e",
