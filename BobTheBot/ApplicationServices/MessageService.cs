@@ -56,7 +56,7 @@ namespace BobTheBot.ApplicationServices
             var senderEmail = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_EMAIL");
             var senderName = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_NAME");
 
-            if (activity.Conversation.IsGroup == null)
+            if (activity.Conversation.IsGroup != null)
             {
                 //Words to search for in conversation
                 var wordsEntity = await wordCache.GetAsync();
