@@ -1,15 +1,15 @@
 {
-  "name": "BobTheBot",
+  "name": "FunctionalBobTheBot",
   "description": "",
   "secretKey": "",
   "services": [
     {
-      "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
       "id": "4b7ccde1-9562-461d-9465-49e03f116243",
+      "name": "FunctionalBobTheBot",
       "type": "endpoint",
+      "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
       "appPassword": "yivkNBQZA039xhaGU53#|*|",
-      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=TNDFns4jt2fCEiDS46xhgt3LgUc7kKMMqLBDw7fahFKmd3RuzzHFNg==",
-      "name": "FunctionalBobTheBot"
+      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=TNDFns4jt2fCEiDS46xhgt3LgUc7kKMMqLBDw7fahFKmd3RuzzHFNg=="
     }
   ]
 }

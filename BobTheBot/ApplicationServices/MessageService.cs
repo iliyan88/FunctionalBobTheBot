@@ -11,7 +11,6 @@ using System.Dynamic;
 using System.Net.Http.Headers;
 using SendGrid.Helpers.Mail;
 using BobTheBot.Kernel;
-using RJ.Core;
 using Microsoft.Bot.Connector;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Rest;
@@ -45,7 +44,7 @@ namespace BobTheBot.ApplicationServices
 
 
 
-        public async Task<Result> CheckSentences(Activity activity)
+        public async void CheckSentences(Activity activity)
         {
 
             var appCredentials = new MicrosoftAppCredentials(configurationRoot);
@@ -57,7 +56,7 @@ namespace BobTheBot.ApplicationServices
             var senderEmail = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_EMAIL");
             var senderName = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_NAME");
 
-            if (activity.Conversation.IsGroup == null)
+            if (activity.Conversation.IsGroup != null)
             {
                 //Words to search for in conversation
                 var wordsEntity = await wordCache.GetAsync();
@@ -83,7 +82,7 @@ namespace BobTheBot.ApplicationServices
 
                     if (words.Any(c => messages.Contains(c.ToLower())))
                     {
-                        var userToResponse = await unitOfWork.UserToReplyRepository.GetActiveUser();
+                        var userToResponse = await unitOfWork.UserToReplyRepository.GetActiveUsers();
 
                         foreach (var user in userToResponse)
                         {
@@ -98,7 +97,7 @@ namespace BobTheBot.ApplicationServices
 
                                 var msg = MailHelper.CreateSingleEmail(
                                 new EmailAddress(senderEmail, senderName),
-                                    new EmailAddress(user.Email, user.UserName),
+                                    new EmailAddress(user.Email, user.SkypeUserName),
                                     "Subject",
                                     "",
                                     "Group: " + group + "\n" + "User: " + from + "\n" + "Message: " + "\"" + activity.Text.ToString() + "\"");
@@ -120,12 +119,13 @@ namespace BobTheBot.ApplicationServices
                 if (messages.Contains("spamm me bob"))
                 {
 
-                    var user = await unitOfWork.UserToReplyRepository.GetFirstOrDefaultAsync(x => x.UserId == activity.From.Id && x.UserName == activity.From.Name);
+                    var user = await unitOfWork.UserToReplyRepository.GetUserByIdAndName(activity.From.Id, activity.From.Name);
                     if (user == null)
                     {
                         var newUser = new UserToReply(activity.Conversation.Id, activity.From.Id, activity.From.Name);
-                        unitOfWork.UserToReplyRepository.Insert(newUser);
+                        await unitOfWork.UserToReplyRepository.InsertAsync(newUser);
                         await unitOfWork.SaveChangesAsync();
+                        await connector.Conversations.SendToConversationAsync(activity.Conversation.Id, activity: activity.CreateReply("User are now added as recipient"));
                     }
                     else
                     {
@@ -133,51 +133,51 @@ namespace BobTheBot.ApplicationServices
                     }
                 }
             }
-            return Result.Ok();
+            //return null;
         }
 
         /// <summary>
         /// Gets and caches a valid token so the bot can send messages.
         /// </summary>
         /// <returns>The token</returns>
-        private async Task<string> GetBotApiToken()
-        {
-            // Check to see if we already have a valid token
-            string token = memoryCache.Get("token")?.ToString();
-            if (string.IsNullOrEmpty(token))
-            {
-                // we need to get a token.
-                using (
-                    var client = new System.Net.Http.HttpClient())
-                {
-                    // Create the encoded content needed to get a token
-                    var parameters = new Dictionary<string, string>
-                    {
-                        {"client_id", this.botCredentials.ClientId },
-                        {"client_secret", this.botCredentials.ClientSecret },
-                        {"scope", "https://graph.microsoft.com/.default" },
-                        {"grant_type", "client_credentials" }
-                    };
-                    var content = new System.Net.Http.FormUrlEncodedContent(parameters);
+        //private async Task<string> GetBotApiToken()
+        //{
+        // Check to see if we already have a valid token
+        //    string token = memoryCache.Get("token")?.ToString();
+        //    if (string.IsNullOrEmpty(token))
+        //    {
+        //        // we need to get a token.
+        //        using (
+        //            var client = new System.Net.Http.HttpClient())
+        //        {
+        //            // Create the encoded content needed to get a token
+        //            var parameters = new Dictionary<string, string>
+        //            {
+        //                {"client_id", this.botCredentials.ClientId },
+        //                {"client_secret", this.botCredentials.ClientSecret },
+        //                {"scope", "https://graph.microsoft.com/.default" },
+        //                {"grant_type", "client_credentials" }
+        //            };
+        //            var content = new System.Net.Http.FormUrlEncodedContent(parameters);
 
-                    // Post
-                    var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v2.0/token", content);
+        //            // Post
+        //            var response = await client.PostAsync("https://login.microsoftonline.com/common/oauth2/v2.0/token", content);
 
-                    // Get the token response
-                    var tokenResponse = await response.Content.ReadAsJsonAsync<Entities.TokenResponse>();
+        //            // Get the token response
+        //            var tokenResponse = await response.Content.ReadAsJsonAsync<TokenResponse>();
 
-                    token = tokenResponse.access_token;
+        //            token = tokenResponse.access_token;
 
-                    // Cache the token fo 15 minutes.
-                    memoryCache.Set(
-                        "token",
-                        token,
-                        new DateTimeOffset(DateTime.Now.AddMinutes(15)));
-                }
-            }
+        //            // Cache the token fo 15 minutes.
+        //            memoryCache.Set(
+        //                "token",
+        //                token,
+        //                new DateTimeOffset(DateTime.Now.AddMinutes(15)));
+        //        }
+        //    }
 
-            return token;
-        }
+        //    return token;
+        // }
     }
 
 }

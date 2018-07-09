@@ -1,11 +1,11 @@
-﻿using RJ.Repository.SqlServer;
-using System;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using BobTheBot.Repositories;
+using System.Threading.Tasks;
 
 namespace BobTheBot
 {
-    public class UnitOfWork : SqlServerCommandUnitOfWork, IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
 
         private readonly AppDbContext dbContext;
@@ -15,11 +15,21 @@ namespace BobTheBot
         public ISearchKeyRepository SearchKeyRepository { get => searchKeyRepository.Value; }
         public IUserToReplyRepository UserToReplyRepository { get => userToReplyRepository.Value; }
 
-        public UnitOfWork(AppDbContext dbContext, IServiceProvider serviceProvider) : base(dbContext)
+        public UnitOfWork(AppDbContext dbContext, IServiceProvider serviceProvider)
         {
             this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             searchKeyRepository = new Lazy<ISearchKeyRepository>(() => serviceProvider.GetService<ISearchKeyRepository>());
             userToReplyRepository = new Lazy<IUserToReplyRepository>(() => serviceProvider.GetService<IUserToReplyRepository>());
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await dbContext.SaveChangesAsync();
+        }
+
+        public void SaveChange()
+        {
+            dbContext.SaveChanges();
         }
     }
 }

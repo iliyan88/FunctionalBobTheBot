@@ -1,28 +1,21 @@
-﻿using RJ.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BobTheBot
+﻿namespace BobTheBot
 {
-    public class Recipient : Entity<int>
+    public class Recipient
     {
         private Recipient()
         {
 
         }
 
-        protected Recipient(int id) : base(id)
-        {
-        }
 
-        public Recipient(string name, string email)
+        public Recipient(int id, string name, string email)
         {
+            Id = id;
             Name = name;
             Email = email;
         }
 
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
     }

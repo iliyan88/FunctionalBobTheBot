@@ -14,12 +14,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.1" />
     <PackageReference Include="Microsoft.Bot.Connector.AspNetCore" Version="2.0.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.1.1" />
-    <PackageReference Include="RJ.Caching.Extensions.Json" Version="1.0.1" />
-    <PackageReference Include="RJ.Core" Version="1.0.1" />
-    <PackageReference Include="RJ.Core.Results" Version="1.2.0" />
-    <PackageReference Include="RJ.HttpClientProvider" Version="1.0.7" />
-    <PackageReference Include="RJ.Repository.Abstractions" Version="1.0.0" />
-    <PackageReference Include="RJ.Repository.EFCore1" Version="1.0.1" />
     <PackageReference Include="Sendgrid" Version="9.9.0" />
     <PackageReference Include="Serilog" Version="2.7.1" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
@@ -29,12 +23,6 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Bob.bot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

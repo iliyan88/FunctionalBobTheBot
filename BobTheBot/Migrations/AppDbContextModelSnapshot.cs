@@ -48,10 +48,10 @@ namespace BobTheBot.Migrations
 
                     b.Property<bool>("SendEmail");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("SkypeUserId")
                         .HasMaxLength(128);
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("SkypeUserName")
                         .HasMaxLength(128);
 
                     b.HasKey("Id");

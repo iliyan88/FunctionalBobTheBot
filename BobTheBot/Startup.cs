@@ -18,9 +18,9 @@ namespace WebApplication
 {
     public class Startup
     {
-         
-        public Startup(IHostingEnvironment env) 
-        { 
+
+        public Startup(IHostingEnvironment env)
+        {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
@@ -125,7 +125,7 @@ namespace WebApplication
 
         protected void AddCommonServices(IServiceCollection services)
         {
-            services.AddRJCoreAbstractions();
+            services.AddScoped<Microsoft.Extensions.Internal.ISystemClock, SystemClock>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ISearchKeyRepository, SearchKeyRepository>();
             services.AddScoped<IWordCache, WordCache>();

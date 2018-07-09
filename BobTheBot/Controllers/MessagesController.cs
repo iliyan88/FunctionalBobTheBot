@@ -1,8 +1,9 @@
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using BobTheBot.ApplicationServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Connector;
-using RJ.Core;
 
 namespace WebApplication.Controllers
 {
@@ -27,10 +28,10 @@ namespace WebApplication.Controllers
         /// <param name="activity">The activity sent to the bot. I'm using dynamic here to simplify the code for the post</param>
         /// <returns>201 Created</returns>
         [HttpPost]
-        public virtual async Task<Result> Post([FromBody] Activity activity)
+        public async Task<HttpResponseMessage> Post([FromBody] Activity activity)
         {
-            var result = await messageService.CheckSentences(activity);
-            return result;
+            messageService.CheckSentences(activity);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

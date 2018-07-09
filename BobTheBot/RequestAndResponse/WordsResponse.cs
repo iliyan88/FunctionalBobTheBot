@@ -19,7 +19,6 @@ namespace BobTheBot.RequestAndResponse
 
         public static WordsResponse Create(SearchKey keys)
         {
-            RJGuard.ForNull(() => keys);
             return new WordsResponse(
                 keys.Id,
                 keys.Word);

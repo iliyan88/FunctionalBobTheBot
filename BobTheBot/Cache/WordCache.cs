@@ -2,9 +2,8 @@
 using BobTheBot.Kernel;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
-using RJ.Core;
-using RJ.Core.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +30,7 @@ namespace BobTheBot.Cache
                 "Words",
                 new DistributedCacheEntryOptions()
                 {
-                    AbsoluteExpiration = systemClock.UtcNow().Add(TimeSpan.FromDays(1)),
+                    AbsoluteExpiration = systemClock.UtcNow.Add(TimeSpan.FromDays(1)),
                 },
                 (words) => words.Select(x => new WordDto(x.Word)),
                 memoryCache,
