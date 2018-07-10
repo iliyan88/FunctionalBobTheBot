@@ -27,7 +27,6 @@ C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\bin\Debug\netcoreap
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\bin\Debug\netcoreapp2.0\BobTheBot.runtimeconfig.dev.json
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\bin\Debug\netcoreapp2.0\BobTheBot.dll
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\bin\Debug\netcoreapp2.0\BobTheBot.pdb
-C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\obj\Debug\netcoreapp2.0\BobTheBot.csprojAssemblyReference.cache
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\obj\Debug\netcoreapp2.0\BobTheBot.csproj.CoreCompileInputs.cache
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\obj\Debug\netcoreapp2.0\BobTheBot.AssemblyInfoInputs.cache
 C:\Users\iliyan88\Source\Repos\FunctionalBobTheBot\BobTheBot\obj\Debug\netcoreapp2.0\BobTheBot.AssemblyInfo.cs

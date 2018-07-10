@@ -1,0 +1,118 @@
+2018-07-02 09:49:45.895 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:1738/  0
+2018-07-02 09:49:45.895 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/values  
+2018-07-02 09:49:46.003 +03:00 [Information] Request finished in 166.5045ms 200 
+2018-07-02 09:49:46.796 +03:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)"
+2018-07-02 09:49:46.941 +03:00 [Information] Executing action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" - Validation state: Valid
+2018-07-02 09:49:47.143 +03:00 [Information] Executed action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.794ms.
+2018-07-02 09:49:47.248 +03:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-07-02 09:49:47.515 +03:00 [Information] Executed action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" in 708.6964ms
+2018-07-02 09:49:47.546 +03:00 [Information] Request finished in 1695.1939ms 200 application/json; charset=utf-8
+2018-07-02 09:53:02.608 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 528
+2018-07-02 09:53:02.650 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:53:03.143 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:53:03.337 +03:00 [Information] Entity Framework Core "2.0.3-rtm-10026" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-02 09:53:03.533 +03:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-02 09:53:03.544 +03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"s\".\"Id\", \"s\".\"Word\"
+FROM \"SearchKeys\" AS \"s\""
+2018-07-02 09:53:03.619 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 473.8053ms.
+2018-07-02 09:53:03.620 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:53:03.645 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 992.2049ms
+2018-07-02 09:53:03.650 +03:00 [Information] Request finished in 1041.7174ms 200 application/json; charset=utf-8
+2018-07-02 09:53:06.686 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 531
+2018-07-02 09:53:06.698 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:53:06.724 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:53:06.735 +03:00 [Information] Entity Framework Core "2.0.3-rtm-10026" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-02 09:53:06.766 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-02 09:53:06.769 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"ConversationId\", \"x\".\"Email\", \"x\".\"IsActive\", \"x\".\"SendEmail\", \"x\".\"SkypeUserId\", \"x\".\"SkypeUserName\"
+FROM \"UserToReplies\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-02 09:53:06.775 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 48.0423ms.
+2018-07-02 09:53:06.778 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:53:06.786 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 80.1181ms
+2018-07-02 09:53:06.800 +03:00 [Information] Request finished in 127.788ms 200 application/json; charset=utf-8
+2018-07-02 09:53:27.835 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 534
+2018-07-02 09:53:27.837 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:53:27.857 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:53:27.859 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.2757ms.
+2018-07-02 09:53:27.862 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:53:27.865 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 25.6443ms
+2018-07-02 09:53:27.871 +03:00 [Information] Request finished in 45.0901ms 200 application/json; charset=utf-8
+2018-07-02 09:53:30.411 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 526
+2018-07-02 09:53:30.413 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:53:30.442 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:53:30.450 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 0.3614ms.
+2018-07-02 09:53:30.453 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:53:30.457 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 39.7615ms
+2018-07-02 09:53:30.467 +03:00 [Information] Request finished in 49.0431ms 200 application/json; charset=utf-8
+2018-07-02 09:53:33.025 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 532
+2018-07-02 09:53:33.028 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:53:33.060 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:53:38.107 +03:00 [Information] Entity Framework Core "2.0.3-rtm-10026" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-02 09:53:38.110 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-02 09:53:38.114 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"ConversationId\", \"x\".\"Email\", \"x\".\"IsActive\", \"x\".\"SendEmail\", \"x\".\"SkypeUserId\", \"x\".\"SkypeUserName\"
+FROM \"UserToReplies\" AS \"x\"
+WHERE \"x\".\"IsActive\" = 1"
+2018-07-02 09:53:38.116 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 5053.6869ms.
+2018-07-02 09:53:38.117 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:53:38.135 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 5089.3409ms
+2018-07-02 09:53:38.149 +03:00 [Information] Request finished in 5119.2919ms 200 application/json; charset=utf-8
+2018-07-02 09:56:33.477 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/values  
+2018-07-02 09:56:33.477 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:1738/  0
+2018-07-02 09:56:33.565 +03:00 [Information] Request finished in 153.3983ms 200 
+2018-07-02 09:56:33.971 +03:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)"
+2018-07-02 09:56:34.080 +03:00 [Information] Executing action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" - Validation state: Valid
+2018-07-02 09:56:34.088 +03:00 [Information] Executed action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.9712ms.
+2018-07-02 09:56:34.130 +03:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-07-02 09:56:34.306 +03:00 [Information] Executed action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" in 317.6217ms
+2018-07-02 09:56:34.318 +03:00 [Information] Request finished in 904.6532ms 200 application/json; charset=utf-8
+2018-07-02 09:56:39.735 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 526
+2018-07-02 09:56:39.777 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:56:40.165 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:56:43.973 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3804.9763ms.
+2018-07-02 09:56:43.975 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:56:44.003 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 4223.7748ms
+2018-07-02 09:56:44.009 +03:00 [Information] Request finished in 4273.7361ms 200 application/json; charset=utf-8
+2018-07-02 09:56:48.612 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:1738/api/Messages application/json 535
+2018-07-02 09:56:48.617 +03:00 [Information] Route matched with "{action = \"Post\", controller = \"Messages\"}". Executing action "WebApplication.Controllers.MessagesController.Post (BobTheBot)"
+2018-07-02 09:56:48.650 +03:00 [Information] Executing action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)" with arguments (["Microsoft.Bot.Connector.Activity"]) - Validation state: Valid
+2018-07-02 09:56:51.998 +03:00 [Information] Entity Framework Core "2.0.3-rtm-10026" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.Sqlite"' with options: "None"
+2018-07-02 09:56:52.161 +03:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-02 09:56:52.172 +03:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__skypeUserId_0='?', @__skypeName_1='?'"], CommandType='Text', CommandTimeout='30']"
+""SELECT \"x\".\"Id\", \"x\".\"ConversationId\", \"x\".\"Email\", \"x\".\"IsActive\", \"x\".\"SendEmail\", \"x\".\"SkypeUserId\", \"x\".\"SkypeUserName\"
+FROM \"UserToReplies\" AS \"x\"
+WHERE (\"x\".\"SkypeUserId\" = @__skypeUserId_0) AND (\"x\".\"SkypeUserName\" = @__skypeName_1)
+LIMIT 1"
+2018-07-02 09:56:52.243 +03:00 [Information] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""PRAGMA foreign_keys=ON;"
+2018-07-02 09:56:52.307 +03:00 [Information] Executed DbCommand ("14"ms) [Parameters=["@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO \"UserToReplies\" (\"ConversationId\", \"Email\", \"IsActive\", \"SendEmail\", \"SkypeUserId\", \"SkypeUserName\")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT \"Id\"
+FROM \"UserToReplies\"
+WHERE changes() = 1 AND \"Id\" = last_insert_rowid();"
+2018-07-02 09:56:52.500 +03:00 [Information] Executed action method "WebApplication.Controllers.MessagesController.Post (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3848.0615ms.
+2018-07-02 09:56:52.503 +03:00 [Information] Executing ObjectResult, writing value of type '"System.Net.Http.HttpResponseMessage"'.
+2018-07-02 09:56:52.505 +03:00 [Information] Executed action "WebApplication.Controllers.MessagesController.Post (BobTheBot)" in 3886.0512ms
+2018-07-02 09:56:52.508 +03:00 [Information] Request finished in 3897.1606ms 200 application/json; charset=utf-8
+2018-07-02 09:57:22.131 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/values  
+2018-07-02 09:57:22.131 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:1738/  0
+2018-07-02 09:57:22.214 +03:00 [Information] Request finished in 146.1067ms 200 
+2018-07-02 09:57:22.592 +03:00 [Information] Route matched with "{action = \"Get\", controller = \"Values\"}". Executing action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)"
+2018-07-02 09:57:22.690 +03:00 [Information] Executing action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" - Validation state: Valid
+2018-07-02 09:57:22.698 +03:00 [Information] Executed action method "BobTheBot.Controllers.ValuesController.Get (BobTheBot)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1.6247ms.
+2018-07-02 09:57:22.740 +03:00 [Information] Executing ObjectResult, writing value of type '"System.String[]"'.
+2018-07-02 09:57:22.898 +03:00 [Information] Executed action "BobTheBot.Controllers.ValuesController.Get (BobTheBot)" in 283.3948ms
+2018-07-02 09:57:22.905 +03:00 [Information] Request finished in 842.695ms 200 application/json; charset=utf-8
+2018-07-02 10:22:12.249 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/Messages  
+2018-07-02 10:22:12.612 +03:00 [Information] Request finished in 396.067ms 404 
+2018-07-02 10:44:46.958 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/Messages  
+2018-07-02 10:44:46.977 +03:00 [Information] Request finished in 24.3053ms 404 
+2018-07-02 11:05:43.490 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:1738/api/Messages  
+2018-07-02 11:05:43.493 +03:00 [Information] Request finished in 3.8089ms 404 
