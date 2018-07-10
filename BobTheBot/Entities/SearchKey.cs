@@ -1,22 +1,18 @@
-﻿using RJ.Core;
-
-namespace BobTheBot.Entities
+﻿namespace BobTheBot.Entities
 {
-    public class SearchKey : Entity<int>
+    public class SearchKey
     {
         private SearchKey()
         {
         }
 
-        protected SearchKey(int id) : base(id)
-        {
-        }
 
         public SearchKey(string word)
         {
             Word = word;
         }
 
+        public int Id { get; set; }
         public string Word { get; set; }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BobTheBot.Entities;
-using RJ.Repository.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace BobTheBot.Repositories
 {
-    public interface IUserToReplyRepository : IRepository<UserToReply>
+    public interface IUserToReplyRepository
     {
-        Task<IReadOnlyList<UserToReply>> GetActiveUser();
+        Task<UserToReply> GetByIDAsync(int id);
+        Task<IReadOnlyList<UserToReply>> GetAsync();
+        Task InsertAsync(UserToReply user);
+        void Update(UserToReply user);
+        void Delete(UserToReply user);
+        Task<IReadOnlyList<UserToReply>> GetActiveUsers();
+        Task<UserToReply> GetUserByIdAndName(string skypeUserId, string skypeName);
     }
 }

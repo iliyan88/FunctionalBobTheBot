@@ -1,10 +1,11 @@
 ﻿using BobTheBot.Entities;
 using BobTheBot.Kernel;
 using BobTheBot.RequestAndResponse;
-using RJ.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BobTheBot.ApplicationServices
@@ -24,31 +25,34 @@ namespace BobTheBot.ApplicationServices
             return users;
         }
 
-        public async Task<Result> UpdateAsync(int entityId, UserUpdateRequest request)
+        public async Task<HttpResponseMessage> UpdateAsync(int entityId, UserUpdateRequest request)
         {
             var user = await unitOfWork.UserToReplyRepository.GetByIDAsync(entityId);
             if (user == null)
             {
-                return Result.Fail(ErrorType.NotFound, nameof(UserToReply), entityId);
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
 
             user.Email = request.Email;
             user.SendEmail = request.SendEmail;
             user.IsActive = request.IsActive;
+
+            unitOfWork.UserToReplyRepository.Update(user);
             await unitOfWork.SaveChangesAsync();
-            return Result.Ok();
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        public async Task<Result> DeleteAsync(int entityId)
+        public async Task<HttpResponseMessage> DeleteAsync(int entityId)
         {
             var user = await unitOfWork.UserToReplyRepository.GetByIDAsync(entityId);
             if (user == null)
             {
-                return Result.Fail(ErrorType.NotFound, nameof(UserToReply), entityId);
+                return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
+
             unitOfWork.UserToReplyRepository.Delete(user);
             await unitOfWork.SaveChangesAsync();
-            return Result.Ok();
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }
