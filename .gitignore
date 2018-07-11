@@ -339,3 +339,4 @@ ImWizer.Cli/[Pp]ending[Jj]obs/*.json
 
 #Custom
 .history/
+/BobTheBot/log-20180711.txt
