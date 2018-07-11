@@ -14,6 +14,8 @@ using BobTheBot.Kernel;
 using Microsoft.Bot.Connector;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Rest;
+using System.Diagnostics;
+using System.Threading;
 
 namespace BobTheBot.ApplicationServices
 {
@@ -44,11 +46,13 @@ namespace BobTheBot.ApplicationServices
 
 
 
-        public async void CheckSentences(Activity activity)
+        public async void CheckSentences(Microsoft.Bot.Connector.Activity activity)
         {
 
             var appCredentials = new MicrosoftAppCredentials(configurationRoot);
-            var connector = new ConnectorClient(new Uri(activity.ServiceUrl), appCredentials);
+            //var connector = new ConnectorClient(new Uri(activity.ServiceUrl), appCredentials);
+            var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+
             string messages = activity.Text.ToString().ToLower();
 
 
@@ -56,8 +60,26 @@ namespace BobTheBot.ApplicationServices
             var senderEmail = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_EMAIL");
             var senderName = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_NAME");
 
+            #region Is Typing Activity
+
+            // var activity = context.Activity as Activity;
+            Trace.TraceInformation($"Type={activity.Type} Text={activity.Text}");
+            if (activity.Type == ActivityTypes.Message)
+            {
+                //var connector = new ConnectorClient(new System.Uri(activity.ServiceUrl));
+                var isTyping = activity.CreateReply("Nerdibot is thinking...");
+                isTyping.Type = ActivityTypes.Typing;
+                await connector.Conversations.ReplyToActivityAsync(isTyping);
+
+                // DEMO: I've added this for demonstration purposes, so we have time to see the "Is Typing" integration in the UI. Else the bot is too quick for us :)
+                Thread.Sleep(2500);
+            }
+
+            #endregion
+
             await connector.Conversations.SendToConversationAsync(activity.Conversation.Id, activity: activity.CreateReply("Hello"));
             await connector.Conversations.ReplyToActivityAsync(activity: activity.CreateReply("Hello Reply"));
+
 
             if (activity.Conversation.IsGroup != null)
             {
