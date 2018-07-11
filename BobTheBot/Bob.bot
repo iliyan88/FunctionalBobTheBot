@@ -3,6 +3,15 @@
   "description": "",
   "secretKey": "",
   "services": [
+
+    {
+      "id": "",
+      "name": "GetLinked",
+      "type": "endpoint",
+      "appId": "",
+      "appPassword": "",
+      "endpoint": "http://localhost:1738/api/messages"
+    },
     {
       "id": "4b7ccde1-9562-461d-9465-49e03f116243",
       "name": "GetLinked",
