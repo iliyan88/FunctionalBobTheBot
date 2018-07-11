@@ -57,6 +57,7 @@ namespace BobTheBot.ApplicationServices
             var senderName = Environment.GetEnvironmentVariable("BOBTHEBOT_SENDER_NAME");
 
             await connector.Conversations.SendToConversationAsync(activity.Conversation.Id, activity: activity.CreateReply("Hello"));
+            await connector.Conversations.ReplyToActivityAsync(activity: activity.CreateReply("Hello Reply"));
 
             if (activity.Conversation.IsGroup != null)
             {
@@ -144,7 +145,7 @@ namespace BobTheBot.ApplicationServices
         /// <returns>The token</returns>
         //private async Task<string> GetBotApiToken()
         //{
-        // Check to see if we already have a valid token
+        //    //Check to see if we already have a valid token
         //    string token = memoryCache.Get("token")?.ToString();
         //    if (string.IsNullOrEmpty(token))
         //    {
@@ -179,7 +180,7 @@ namespace BobTheBot.ApplicationServices
         //    }
 
         //    return token;
-        // }
+        //}
     }
 
 }
