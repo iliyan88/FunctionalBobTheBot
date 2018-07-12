@@ -9,7 +9,7 @@
       "type": "endpoint",
       "appId": "d793af3f-1981-4304-87f6-d7479e1105df",
       "appPassword": "h%*BI+G0B0>4WQB_",
-      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=xiHA9dzdA8a47VGXvoMrCbXQ4Q9wbp4Ak9zcYxfTxXFyWP6n8dF/cw=="
+      "endpoint": "https://webappbotgetlink.azurewebsites.net/api/messages"
     },
     {
       "id": "",
