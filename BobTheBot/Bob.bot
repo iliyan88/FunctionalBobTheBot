@@ -4,12 +4,12 @@
   "secretKey": "CwoTCzdM5Kk.cwA.I8U.g11HN4iQiGmz101WUSRczwNVZ6QmcHdwTgkMQ4x7RwI",
   "services": [
     {
-      "id": "FunctionalBobTheBot",
+      "id": "GetLinked",
       "name": "GetLinked",
       "type": "endpoint",
-      "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
-      "appPassword": "yivkNBQZA039xhaGU53#|*|",
-      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=luXUA7SQP7r7dja3KopRuAWItuHBTYCpvkgsNGImj/5CoyYUDTeJXA=="
+      "appId": "89dff460-160c-4728-9fcb-74b266cbb7d7",
+      "appPassword": "=4eL$C%SGui}omuX",
+      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=xiHA9dzdA8a47VGXvoMrCbXQ4Q9wbp4Ak9zcYxfTxXFyWP6n8dF/cw=="
     },
     {
       "id": "",
