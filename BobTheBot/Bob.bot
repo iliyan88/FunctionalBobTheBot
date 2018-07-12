@@ -1,14 +1,14 @@
 {
   "name": "GetLinked",
   "description": "",
-  "secretKey": "Z28EuJzepjg.cwA.FC4.wXUhTAgb507Nw3Uko64t7liiXBl-aJRaMgHhx9OeK3M",
+  "secretKey": "k8M6D2jFOqo.cwA.zwM.UW_Y3aIJ9rIgbBA3Lcdat94vTKcajDb_KccbTsBYdRg",
   "services": [
     {
-      "id": "GetLinked",
-      "name": "GetLinked",
+      "id": "GetLinkedBot",
+      "name": "GetLinkedBot",
       "type": "endpoint",
-      "appId": "f7f9a824-0196-441b-84e0-fec8d1039b0f",
-      "appPassword": "tgsSMBTJ1(emdxPK2378!!?",
+      "appId": "0319dedd-6771-4432-b434-bb3abfbd2808",
+      "appPassword": "cmorZNS3080(ntyWSZW3];]",
       "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=xiHA9dzdA8a47VGXvoMrCbXQ4Q9wbp4Ak9zcYxfTxXFyWP6n8dF/cw=="
     },
     {
