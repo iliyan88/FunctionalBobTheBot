@@ -1,11 +1,11 @@
 {
   "name": "GetLinked",
   "description": "",
-  "secretKey": "k8M6D2jFOqo.cwA.zwM.UW_Y3aIJ9rIgbBA3Lcdat94vTKcajDb_KccbTsBYdRg",
+  "secretKey": "VQNst933V0c.cwA.YEw.XlglbCNy4qXAv2GpL5axFjUfDvbQat_TrnD3eb7SGIQ",
   "services": [
     {
-      "id": "GetLinkedBot",
-      "name": "GetLinkedBot",
+      "id": "WebAppBotGetLink",
+      "name": "WebAppBotGetLink",
       "type": "endpoint",
       "appId": "d793af3f-1981-4304-87f6-d7479e1105df",
       "appPassword": "lgmsfMMNYBF34?tdS007^^]",
