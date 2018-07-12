@@ -17,7 +17,7 @@
       "type": "endpoint",
       "appId": "",
       "appPassword": "",
-      "endpoint": "http://localhost:1738/api/messages"
+      "endpoint": "http://localhost:1738/api/messages/"
     }
   ]
 }
