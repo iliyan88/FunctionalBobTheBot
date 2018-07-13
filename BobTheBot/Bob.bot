@@ -1,7 +1,7 @@
 {
   "name": "GetLinked",
   "description": "",
-  "secretKey": "VQNst933V0c.cwA.YEw.XlglbCNy4qXAv2GpL5axFjUfDvbQat_TrnD3eb7SGIQ",
+  "secretKey": "VQNst933V0c.cwA.6gI.xM7vy2HkS4eFOT78sj8yeIB0nh03OkH31IkIRsyJhCE",
   "services": [
     {
       "id": "WebAppBotGetLink",
