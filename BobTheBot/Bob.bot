@@ -8,7 +8,7 @@
       "id": "GetLinked",
       "type": "endpoint",
       "appPassword": "yivkNBQZA039xhaGU53#|*|",
-      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=luXUA7SQP7r7dja3KopRuAWItuHBTYCpvkgsNGImj/5CoyYUDTeJXA==",
+      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=UOYJNW8tmjr/esGBSbQL4hSUUpV4F/CIix2zlR9cTwE9kYUfbtPu8A==",
       "name": "GetLinked"
     },
     {
