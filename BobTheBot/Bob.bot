@@ -1,23 +1,23 @@
 {
   "name": "GetLinked",
   "description": "",
-  "secretKey": "k8M6D2jFOqo.cwA.cpI.VpCdOF9Ik4nUI1WR8CLPHMUOU8Yp7y5YNRNNipaUptU",
+  "secretKey": "luXUA7SQP7r7dja3KopRuAWItuHBTYCpvkgsNGImj/5CoyYUDTeJXA==",
   "services": [
     {
-      "id": "GetLinkedBot",
-      "name": "GetLinkedBot",
+      "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
+      "id": "GetLinked",
       "type": "endpoint",
-      "appId": "0319dedd-6771-4432-b434-bb3abfbd2808",
-      "appPassword": "qwipwMFD360~{jtGIEK06|}",
-      "endpoint": "https://webappbotgetlink.azurewebsites.net/api/messages?code=hSnmo2WPIIAEyFKZWbkPWo09H7xB4qaNSpqXzGWZRa/UWuUsXS9KPw=="
+      "appPassword": "yivkNBQZA039xhaGU53#|*|",
+      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=luXUA7SQP7r7dja3KopRuAWItuHBTYCpvkgsNGImj/5CoyYUDTeJXA==",
+      "name": "GetLinked"
     },
     {
-      "id": "",
-      "name": "GetLinkedLocal",
-      "type": "endpoint",
       "appId": "",
+      "id": "",
+      "type": "endpoint",
       "appPassword": "",
-      "endpoint": "http://localhost:1738/api/messages/"
+      "endpoint": "http://localhost:1738/api/messages/",
+      "name": "GetLinkedLocal"
     }
   ]
 }
