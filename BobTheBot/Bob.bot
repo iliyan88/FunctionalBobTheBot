@@ -1,15 +1,15 @@
 {
   "name": "GetLinked",
   "description": "",
-  "secretKey": "CwoTCzdM5Kk.cwA.I8U.g11HN4iQiGmz101WUSRczwNVZ6QmcHdwTgkMQ4x7RwI",
+  "secretKey": "-nr0IUtZ8eE.cwA.33k.bdGZcSEgb0MkcrMmUKjkiOfc9QTFLUv6ocqSUi4e8Hc",
   "services": [
     {
-      "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
-      "id": "GetLinked",
+      "appId": "4e9ca3a4-d831-4891-8302-aaf5c0db1864",
+      "id": "TempTestBotDefault",
       "type": "endpoint",
-      "appPassword": "yivkNBQZA039xhaGU53#|*|",
-      "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=luXUA7SQP7r7dja3KopRuAWItuHBTYCpvkgsNGImj/5CoyYUDTeJXA==",
-      "name": "GetLinked"
+      "appPassword": "jtgwUFGXQ47)((hctNQ913_",
+      "endpoint": "https://temptestbotdefault.azurewebsites.net/api/messages?code=T8bmdvgyZRfhdqrgnfZrEytnszrjSP7MbLdzptWjRdb0vTJcMwdPkA==",
+      "name": "TempTestBotDefault"
     },
     {
       "appId": "",
