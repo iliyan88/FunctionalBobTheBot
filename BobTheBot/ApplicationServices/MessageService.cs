@@ -53,7 +53,7 @@ namespace BobTheBot.ApplicationServices
             //var connector = new ConnectorClient(new Uri(activity.ServiceUrl), appCredentials);
             var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
 
-            string messages = activity.Text.ToString().ToLower();
+            string messages = activity.Text?.ToString().ToLower();
 
 
             //Email variables

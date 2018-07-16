@@ -5,19 +5,19 @@
   "services": [
     {
       "appId": "4b7ccde1-9562-461d-9465-49e03f116243",
-      "id": "GetLinked",
+      "id": "FunctionalBobTheBot",
       "type": "endpoint",
       "appPassword": "yivkNBQZA039xhaGU53#|*|",
       "endpoint": "https://functionalbobthebot.azurewebsites.net/api/messages?code=UOYJNW8tmjr/esGBSbQL4hSUUpV4F/CIix2zlR9cTwE9kYUfbtPu8A==",
-      "name": "GetLinked"
+      "name": "FunctionalBobTheBot"
     },
     {
       "appId": "",
-      "id": "",
+      "id": "FunctionalBobTheBot",
       "type": "endpoint",
       "appPassword": "",
       "endpoint": "http://localhost:1738/api/messages/",
-      "name": "GetLinkedLocal"
+      "name": "FunctionalBobTheBotLocal"
     }
   ]
 }
